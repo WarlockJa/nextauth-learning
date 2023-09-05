@@ -1,0 +1,26 @@
+install next-auth
+
+create and fill .env (openssl rand -base64 32)
+
+create src/app/api/auth/[...nextauth]/route.ts
+
+create src/app/components/SessionProvider.tsx - reexporting SessionProvider as a client component
+
+editing src/app/layout.tsx - adding server side session fetcher (getServerSession). Wrapping children in SessionProvider
+
+creating src/app/components/NavMenu.tsx - using { session, signin, signout } functions from nextauth
+
+getting server session in React Server Component(RSC) - src/app/page.tsx
+
+protected routes
+creating protected route src/app/protected/page.tsx - can only be seen if authenticated
+editing protected content to src/app/components/NavMenu.tsx
+
+auth in server actions
+enable server action in next.config.js
+create src/app/serverAction/page.tsx
+
+auth in API routes
+creating src/app/api/whoAmI/route.ts - GET request
+creating client API route src/apiFromClient/page.tsx
+creating RSC API route src/apiFromServer/page.tsx - we need to pass headers to the request so that server can request itself and get results
