@@ -1,3 +1,5 @@
+(https://www.youtube.com/watch?v=md65iBX5Gxg)
+
 install next-auth
 
 create and fill .env (openssl rand -base64 32)
